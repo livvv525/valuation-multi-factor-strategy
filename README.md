@@ -41,13 +41,13 @@ Backtest period: 2020–2024
 
 All factors undergo winsorization, rolling Z-score normalization, and sign-direction adjustment.
 
-Factor	Description	Direction
+Factor	         Description	                    Direction
 
-PE_TTM	Valuation (low PE preferred)	Lower is better
-Vol_30D	30-day realized volatility	Lower is better
-Size	Log market-cap proxy	Smaller is better
-Dividend Yield	dvRatioTTM	Higher is better
-Profit Growth	YoY net profit growth	Higher is better
+PE_TTM	         Valuation (low PE preferred)	    Lower is better
+Vol_30D	         30-day realized volatility	      Lower is better
+Size	           Log market-cap proxy	            Smaller is better
+Dividend Yield	 dvRatioTTM	                      Higher is better
+Profit Growth	   YoY net profit growth	          Higher is better
 
 
 Factor Weights
@@ -209,8 +209,6 @@ Data engineering and reproducibility
 
 Visualization and performance reporting
 
-
-Ideal for MFE / MFin / Data Science graduate program applications.
 
 
 Contact
