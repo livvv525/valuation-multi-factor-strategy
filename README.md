@@ -1,51 +1,62 @@
-Valuation-Based Multi-Factor Equity Strategy for CSI300
+Valuation-Based Multi-Factor Equity Strategy for CSI 300
 
-A complete quantitative investment research project using Python, Baostock, and multi-factor modeling.
+A full quantitative research pipeline: data → factors → IC analysis → portfolio construction → backtesting.
+
 
 Overview
 
-This project implements a valuation-driven multi-factor stock selection strategy for the CSI 300 universe.
-The entire workflow—from data acquisition to factor engineering, IC analysis, industry-neutral portfolio construction, and backtesting—is completed in a single, fully-engineered Python pipeline.
+This project implements a valuation-driven multi-factor equity selection strategy for the CSI 300 universe.
+It includes the complete quantitative research workflow:
 
-This project demonstrates:
+Data acquisition via Baostock
 
-Quantitative research workflow
-Factor construction and standardization
+Factor construction & cleaning
+
+Z-score standardization
+
 Industry-neutral stock selection
-Portfolio backtesting
-Performance evaluation
-Data engineering and reproducibility
 
-This repository contains the exact implementation used for my MFE/MFin applications.
+Portfolio backtesting with trading costs
+
+Performance evaluation
+
+Visualization & reporting
+
+
+The entire strategy is implemented in one fully engineered Python script, suitable for use in quantitative finance graduate applications (MFE / MFin / Financial Engineering).
+
 
 Strategy Design
 
 1. Universe
 
 CSI 300 constituents
+
 Daily frequency
+
 Backtest period: 2020–2024
+
 
 2. Factors Included
 
-All factors are cleaned by winsorization + Z-score standardization + direction normalization.
+All factors undergo winsorization, rolling Z-score normalization, and sign-direction adjustment.
 
-Factor	        Description	                   Direction
+Factor	Description	Direction
 
-PE_TTM	        Valuation factor	           Lower is better
-Vol_30D	        30-day rolling volatility	   Lower is better
-Size	        Log-market-cap proxy	       Smaller is better
-Dividend Yield	dvRatioTTM	                   Higher is better
-Profit Growth	YoY net profit growth	       Higher is better
+PE_TTM	Valuation (low PE preferred)	Lower is better
+Vol_30D	30-day realized volatility	Lower is better
+Size	Log market-cap proxy	Smaller is better
+Dividend Yield	dvRatioTTM	Higher is better
+Profit Growth	YoY net profit growth	Higher is better
 
 
-Factor weights:
+Factor Weights
 
-PE_TTM:        30%
-Vol_30D:       25%
-Size:          20%
-Dividend Yield:15%
-Profit Growth: 10%
+PE_TTM:         30%
+Vol_30D:        25%
+Size:           20%
+Dividend Yield: 15%
+Profit Growth:  10%
 
 
 Methodology
@@ -54,58 +65,72 @@ Methodology
 
 Using Baostock APIs:
 
-Daily OHLCV
+OHLCV
 
 PE / PB / PS
 
-Dividend ratio
+Dividend payout
 
 Profit growth
 
 Industry classification
 
+
 2. Factor Engineering
 
-Outlier removal (winsorize at 5%/95%)
+Winsorize each factor at 5% / 95%
 
-Rolling historical mean/std standardization
+Rolling-window mean & standard deviation normalization
 
-Direction adjustment (+/-)
+Direction adjustment (+1 or –1)
 
-Factor combination using weighted linear aggregation
+Weighted linear combination into a composite multi-factor score
+
 
 3. Portfolio Construction
 
 Rebalance frequency: every 2 months
 
-Industry-neutral selection
+Industry-neutral selection: choose top 10% within each industry
 
-Select top 10% within each industry
+Minimum holdings: 25 stocks
 
-Minimum 25 positions
+Transaction cost applied based on turnover
 
-Turnover-based transaction cost included
+Stop-loss & drawdown control to prevent extreme downside
 
-Stop-loss & drawdown control mechanism
 
 4. Backtesting Framework
 
-Forward-looking period returns
+The backtest includes:
 
-IC computation for every factor
+Forward-looking returns
+
+Per-period factor IC (Information Coefficient)
 
 Portfolio NAV path
 
-Trading cost deduction
+Extreme-loss filtering
 
-Extreme-loss control
+Drawdown-based protection
 
-Drawdown protection
+Performance evaluation
 
 
-Performance Metrics Reported
+Outputs include:
 
-The script automatically computes:
+NAV curve
+
+Drawdown curve
+
+Factor IC heatmap
+
+Monthly return distribution
+
+
+Performance Metrics (Automatically Generated)
+
+Total return
 
 Annualized return
 
@@ -121,85 +146,73 @@ Win rate
 
 Profit/loss ratio
 
-Excess return vs CSI300
+Excess return vs CSI 300
 
 Information ratio
 
 
-And outputs:
+Repository Structure
 
-NAV curve
+This version uses a single-file pipeline for clarity:
 
-Drawdown curve
-
-Factor IC heatmap
-
-Monthly returns distribution
-
-
-Repository Structure（single-file version）
-
-Your repository currently uses a single-file design:
-
-valuation_strategy.py        # Full strategy pipeline (data, factors, backtest, visualization)
-README.md       # Project description
-
-The full pipeline is contained in one complete script for clarity and ease of execution.
+valuation_strategy.py   # End-to-end strategy pipeline
+README.md               # Project documentation
+results/                # Output charts and metrics (generated after running)
 
 
 How to Run
 
-1. Install required packages:
-
-
+1. Install required packages
 
 pip install baostock pandas numpy matplotlib scipy
 
-2. Run the strategy:
-
-
+2. Run the full pipeline
 
 python valuation_strategy.py
 
-3. Outputs appear as:
+3. Outputs (saved automatically)
 
+*_nav.csv – NAV time series
 
+*_returns.csv – Period returns
 
-NAV curve PNG
+*_ic.csv – Factor IC table
 
-IC table CSV
+*_metrics.csv – Performance summary
 
-Holdings CSV
+*_holdings.csv – Holdings per rebalance
 
-Returns CSV
-
-Strategy metrics CSV
+equity_curve.png – Net asset value curve
 
 
 Skills Demonstrated
 
-Multi-factor equity modeling
+This project showcases core quantitative finance competencies:
 
-Python for quant research
+Multi-factor model design
 
-Time-series data processing
+Equity cross-sectional research
 
-Factor standardization methods
+Python for financial modeling
 
-Industry-neutral portfolio construction
+Time-series processing
 
-Backtesting & risk analysis
+Factor standardization & normalization
 
-Visualization & reporting
+Industry-neutral stock selection
 
-Large-scale data cleaning
+Backtesting methodology
 
-Reproducible research workflow
+Risk management (stop-loss, drawdown control)
+
+Data engineering and reproducibility
+
+Visualization and performance reporting
 
 
-This project showcases the exact type of quantitative research skills required for MFE / MFin / Data Science graduate programs.
+Ideal for MFE / MFin / Data Science graduate program applications.
 
 
 Contact
 
-If you have any questions about this project, feel free to reach out.
+Feel free to reach out for collaboration or discussion on quantitative strategies.
