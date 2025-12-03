@@ -1,0 +1,61 @@
+# Strategy Configuration
+strategy:
+  name: "Valuation Multi-Factor Strategy"
+  start_date: "2020-01-01"
+  end_date: "2024-12-31"
+  top_pct: 0.10
+  transaction_cost: 0.002
+  min_stocks: 25
+  adjust_freq: "2ME"
+  cache_path: "cache/valuation_strategy_cache.pkl"
+
+# Factor Configuration
+factors:
+  pe_ttm:
+    name: "P/E Ratio (TTM)"
+    weight: 0.30
+    direction: -1
+    description: "Trailing twelve months price-to-earnings ratio"
+    
+  vol_30d:
+    name: "30-Day Volatility"
+    weight: 0.25
+    direction: -1
+    description: "Standard deviation of daily returns over 30 days"
+    
+  size:
+    name: "Market Capitalization"
+    weight: 0.20
+    direction: -1
+    description: "Natural log of average market capitalization"
+    
+  div_yield:
+    name: "Dividend Yield"
+    weight: 0.15
+    direction: 1
+    description: "Dividend per share divided by price per share"
+    
+  profit_grow:
+    name: "Profit Growth"
+    weight: 0.10
+    direction: 1
+    description: "Year-over-year net profit growth rate"
+
+# Risk Management
+risk:
+  stop_loss_threshold: -0.05
+  max_drawdown_threshold: -0.15
+  extreme_loss_threshold: -0.08
+  extreme_loss_count_limit: 0.20
+  
+# Data Processing
+data:
+  winsor_lo: 0.05
+  winsor_hi: 0.95
+  min_price_days: 150
+  min_fundamental_days: 50
+  
+# Performance Metrics
+metrics:
+  risk_free_rate: 0.02
+  periods_per_year: 6  # For bi-monthly rebalancing
