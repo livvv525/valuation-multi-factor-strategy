@@ -185,7 +185,7 @@ Dividends as indicators of quality and value
 
 🔍 Key Findings
 1. Factor Effectiveness
-P/E ratio showed strongest predictive power (IC: 0.042)
+P/E ratio showed strongest predictive power 
 
 Combination of factors improved stability
 
