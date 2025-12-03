@@ -1,7 +1,6 @@
 # Results Analysis
 
 ## Strategy Performance (2020-2024)
-*Results will be updated after running the strategy*
 
 ## Key Metrics
 - Annual Return:35.36%
