@@ -4,17 +4,16 @@
 *Results will be updated after running the strategy*
 
 ## Key Metrics
-- Annual Return: [To be calculated]
-- Sharpe Ratio: [To be calculated]
-- Maximum Drawdown: [To be calculated]
-- Win Rate: [To be calculated]
+- Annual Return:35.36%
+- Sharpe Ratio: 1.273
+- Maximum Drawdown: -6.77%
+- Win Rate: 50%
 
 ## Factor Performance
-- P/E Ratio IC: [To be calculated]
-- Volatility IC: [To be calculated]
-- Size IC: [To be calculated]
-- Dividend Yield IC: [To be calculated]
-- Profit Growth IC: [To be calculated]
+- P/E Ratio IC: 0.0207
+- Volatility IC: -0.0265
+- Size IC: -0.0005
+
 
 ## Charts
 ![Strategy Performance](results/images/performance_chart.png)
