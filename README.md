@@ -74,7 +74,7 @@ text
 
 ### Prerequisites
 - Python 3.8+
-- Baostock account (free registration required)
+- Baostock account 
 
 ### Setup
 ```bash
