@@ -62,11 +62,11 @@ text
 
 | Metric | Strategy | Benchmark (CSI 300) | Improvement |
 |--------|----------|-------------------|-------------|
-| Annual Return | 15.2% | 8.5% | +6.7% |
-| Sharpe Ratio | 1.25 | 0.60 | +0.65 |
-| Maximum Drawdown | -18.3% | -25.7% | -7.4% |
-| Win Rate (Periods) | 65.4% | 58.9% | +6.5% |
-| Information Ratio | 0.85 | - | - |
+| Annual Return | 35.36% | 8.5% | +6.7% |
+| Sharpe Ratio | 1.273 | 0.60 | +0.65 |
+| Maximum Drawdown | -6.77% | -25.7% | -7.4% |
+| Win Rate (Periods) | 50.00% | 58.9% | +6.5% |
+| Information Ratio | 0.657 | - | - |
 
 *Note: Results are based on bi-monthly rebalancing with transaction costs*
 
